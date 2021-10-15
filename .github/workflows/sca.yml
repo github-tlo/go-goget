@@ -22,7 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      -run: export GOPATH = $(go env GOPATH); echo $GOPATH
+      - run: export GOPATH=$(go env GOPATH); echo $GOPATH
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       - run: export SRCCLR_API_TOKEN=${{ secrets.SRCCLR_API_TOKEN }} && /usr/bin/curl -sSL https://download.sourceclear.com/ci.sh | /bin/sh -s -- scan
